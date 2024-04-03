@@ -20,14 +20,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
-@RestController
-@RequestMapping(path = "/api",produces = (MediaType.APPLICATION_JSON_VALUE))
-@RequiredArgsConstructor
-@Validated
-public class AccountController {
-
-    private final IAccountsService iAccountsService;
-
     /**
      * @author hhaidar
      */
@@ -40,9 +32,9 @@ public class AccountController {
     @RequestMapping(path="/api", produces = {MediaType.APPLICATION_JSON_VALUE})
     @RequiredArgsConstructor
     @Validated
-    public class AccountsController {
+    public class AccountController {
 
-        private IAccountsService iAccountsService;
+        private final IAccountsService iAccountsService;
 
         @Operation(
                 summary = "Create Account REST API",
@@ -170,4 +162,4 @@ public class AccountController {
             }
         }
     }
-}
+
